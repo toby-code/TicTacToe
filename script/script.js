@@ -1,9 +1,10 @@
 let fields = [];
+let gameOver = false;
 let currentShape = 'cross';
 
 
 function fillShape(id) {
-    if(!fields[id]) {
+    if(!fields[id] && !gameOver) {
         if(currentShape == 'cross') {
             currentShape = 'circle';
             document.querySelector('#player-1').classList.add('player-inactive');
@@ -66,6 +67,25 @@ function checkForWin() {
         document.querySelector('#line-7').style.transform = 'rotate(-45deg) scaleX(1)';
     }
     if(winner) {
-        console.log(winner + 'is the winner!');
+        gameOver = true;
+        setTimeout(function() {
+            document.querySelector('#gameOver').classList.remove('d-none');
+            document.querySelector('#restartBtn').classList.remove('d-none');
+        }, 1000);
+        
     } 
+}
+
+function restart() {
+    gameOver = false;
+    fields = [];
+    document.querySelector('#gameOver').classList.add('d-none');
+    document.querySelector('#restartBtn').classList.add('d-none');
+    for(let i = 0; i < 8; i++) {
+        document.querySelector('#line-' + i).classList.add('d-none');
+    }
+    for(let i = 0; i < 9; i++) {
+        document.querySelector('#circle-' + i).classList.add('d-none');
+        document.querySelector('#cross-' + i).classList.add('d-none');
+    }
 }
