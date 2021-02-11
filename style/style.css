@@ -82,10 +82,12 @@ table td:last-child {
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
 }
 
 .make-vertical {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scaleX(0.0);
 }
 
 .d-none {
