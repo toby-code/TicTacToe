@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -40,6 +49,30 @@ table td:last-child {
     height: 80px;
     left: 26.5px;
     bottom: 26.5px;
+}
+
+.player {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+.player-panel {
+    display: flex;
+    font-size: 32px;
+    font-family: Arial;
+    margin-bottom: 32px;
+}
+
+.player-panel div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 16px 0 16px;
+}
+
+.player-inactive {
+    opacity: 40%;
 }
 
 .d-none {
